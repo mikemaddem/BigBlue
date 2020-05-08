@@ -37,15 +37,15 @@ elseif($param1 -eq 'blockip' -And $param2 -eq 'out'){
     write-host "Blocking ip for outbound traffic"
     $ip = Read-Host "Enter the ip address like x.x.x.x"
     echo "Blocking outbound tcp and udp for $ip"
-    #New-NetFirewallRule -DisplayName "Block $ip" -Direction Outbound -LocalPort Any -Protocol TCP -Action Block -RemoteAddress $ip
-    #New-NetFirewallRule -DisplayName "Block $ip" -Direction Outbound -LocalPort Any -Protocol UDP -Action Block -RemoteAddress $ip
+    New-NetFirewallRule -DisplayName "Block $ip" -Direction Outbound -LocalPort Any -Protocol TCP -Action Block -RemoteAddress $ip
+    New-NetFirewallRule -DisplayName "Block $ip" -Direction Outbound -LocalPort Any -Protocol UDP -Action Block -RemoteAddress $ip
 }
 elseif($param1 -eq 'blockip' -And $param2 -eq 'in'){
     write-host "Blocking ip for inbound traffic"
     $ip = Read-Host "Enter the ip address like x.x.x.x"
     echo "Blocking inbound tcp and udp for $ip"
-    #New-NetFirewallRule -DisplayName "Block $ip" -Direction Inbound -LocalPort Any -Protocol TCP -Action Block -RemoteAddress $ip
-    #New-NetFirewallRule -DisplayName "Block $ip" -Direction Inbound -LocalPort Any -Protocol UDP -Action Block -RemoteAddress $ip
+    New-NetFirewallRule -DisplayName "Block $ip" -Direction Inbound -LocalPort Any -Protocol TCP -Action Block -RemoteAddress $ip
+    New-NetFirewallRule -DisplayName "Block $ip" -Direction Inbound -LocalPort Any -Protocol UDP -Action Block -RemoteAddress $ip
 }
 elseif($param1 -eq 'commands' -Or $param1 -eq 'help'){
     write-host "Listing all commands"
